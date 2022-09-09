@@ -9,7 +9,6 @@
                 } else {
                     $contenido = "404";
                 }
-                
             } else if( $vistas == "login" || $vistas == "index" ){
                 $contenido = "login";
             } else {

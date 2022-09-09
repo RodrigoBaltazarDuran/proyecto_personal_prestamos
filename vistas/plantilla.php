@@ -8,6 +8,18 @@
 </head>
 <body>
 	
+	<?php
+		$peticionAjax = false;
+		require_once "./controladores/vistasControlador.php";
+		$IV = new vistasControlador();
+
+		$vistas = $IV->obtener_vistas_controlador();
+
+		if($vistas == "login" || $vistas == "404" ){
+			require_once "./vistas/contenidos/".$vistas."-view.php";
+		} else {
+	?>
+
 	<!-- Main container -->
 	<main class="full-box main-container">
 		<!-- Nav lateral -->
@@ -15,20 +27,15 @@
 
 		<!-- Page content -->
 		<section class="full-box page-content">
-            <?php include "./vistas/inc/NavBar.php"; ?>
-
-			<!-- Page header -->
-			<div class="full-box page-header">
-				<h3 class="text-left">
-					<i class="fab fa-dashcube fa-fw"></i> &nbsp; DASHBOARD
-				</h3>
-				<p class="text-justify">
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit nostrum rerum animi natus beatae ex. Culpa blanditiis tempore amet alias placeat, obcaecati quaerat ullam, sunt est, odio aut veniam ratione.
-				</p>
-			</div>
-
+            <?php 
+				include "./vistas/inc/NavBar.php";
+				include $vistas;
+			?>
 		</section>
 	</main>
-    <?php include "./vistas/inc/Script.php"; ?>
+    <?php
+		}
+		include "./vistas/inc/Script.php";
+	?>
 </body>
 </html>
