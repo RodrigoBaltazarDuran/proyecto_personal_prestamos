@@ -34,7 +34,7 @@
         /* ----------------- Desencriptar cadenas ----------------- */
         protected static function decryption($string){
             $key = hash('sha256', SECRET_KEY);
-            $IV = substr( hash('sha256', SECRET_IV), 0, 16 );
+            $iv = substr( hash('sha256', SECRET_IV), 0, 16 );
             $output = openssl_decrypt( base64_decode( $string ), METHOD, $key, 0, $iv );
             return $output;
         }
@@ -90,7 +90,7 @@
             }
         }
 
-        /* ----------------- Funcion para validar datos ----------------- */
+        /* ----------------- Funcion para validar fechas ----------------- */
         protected static function verificar_fecha($fecha){
             $valores = explode( "-", $fecha );
 

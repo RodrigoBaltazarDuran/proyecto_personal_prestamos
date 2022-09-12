@@ -1,5 +1,5 @@
 <?php
-    const SERVERURL = "http://prestamos.localhost:8081/";
+    const SERVERURL = "http://prestamos.localhost/";
     const COMPANY = "SISTEMA DE PRESTAMOS";
     const MONEDA = "$";
 

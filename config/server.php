@@ -3,7 +3,7 @@
     const SERVER = "localhost";
     const DB = "prestamos";
     const USER = "root";
-    const PASS = "root";
+    const PASS = "";
 
     // Variable para la conexión a la base de datos por medio de PDO
     const SGBD = "mysql:host=".SERVER.";dbname=".DB;
